@@ -8,18 +8,19 @@ export default function Shell(){
 
     const [i, setI] = useState(null);
     var [choices, setChoices] = useState([
-         {id: 1, name: "test1"},
-         {id: 2, name: "test2"}
+         {id: 1, name: "Accéder au portfolio"},
+         {id: 2, name: "test2"},
+         {id: 3, name: "test3"},
     ]);
 
     const increment = () => {
-        if (i <= 2) setI(i => ++i);
+        setI((i) => i < choices.length ? ++i : i);
     };
     const decrement = () => {
-        if (i <= choices.length) setI((i) => --i);
+        setI((i) => i > 1 ? --i : i);
     };
 
-    useKey('ArrowRight', increment)
+    useKey('ArrowRight', increment);
     useKey('ArrowLeft', decrement);
 
     useEffect(() => {
@@ -28,8 +29,6 @@ export default function Shell(){
 
         return () => date;
     }, [date]);
-
-    console.log(i, (i <= choices.length))
 
     return(
         <div className="bg-black h-screen text-white font-mono text-sm">
