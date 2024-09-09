@@ -45,7 +45,7 @@
     --accent-foreground: 195 5% 10%;
     --destructive: 0 100% 30%;
     --destructive-foreground: 195 5% 90%;
-    --border: 195 30% 50%;
+    --border: 160 18 3;
     --input: 195 30% 18%;
     --ring: 195 64% 90.2%;
     --radius: 1rem;
@@ -67,7 +67,7 @@
     --accent-foreground: 195 5% 90%;
     --destructive: 0 100% 30%;
     --destructive-foreground: 195 5% 90%;
-    --border: 195 30% 18%;
+    --border: 195 100% 95%;
     --input: 195 30% 18%;
     --ring: 195 64% 90.2%;
     --radius: 1rem;

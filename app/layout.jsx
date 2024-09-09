@@ -18,7 +18,6 @@ export default function RootLayout({ children }){
                 attribute="class"
                 defaultTheme="system"
                 enableSystem
-                disableTransitionOnChange
                 >
                     <MainWrapper>
                         <Navbar/>

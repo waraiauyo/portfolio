@@ -5,17 +5,19 @@ import Link from "next/link";
 
 export default function Breadcrumb(){
     const pathname = usePathname();
-    const urlLocations = pathname.split("/").slice(1);
+    const locations = pathname.split("/").slice(1);
 
     return(
         <div className="flex">
             {
-                urlLocations.map((location) => {
+                locations.map((location, i) => {
                     return(
-                        <Link href={`/${location}`} className="hover:underline">/{location}</Link>
+                        <Link href={`/${locations.slice(0, i + 1).map((location) => {
+                            return `${location}/`;
+                        }).join("")}`} className="hover:underline">/{location}</Link>
                     );
                 })
             }
         </div>
-    )
+    );
 }
