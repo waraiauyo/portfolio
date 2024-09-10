@@ -8,7 +8,7 @@ export default function Breadcrumb(){
     const locations = pathname.split("/").slice(1);
 
     return(
-        <div className="flex">
+        <div className="mx-8 flex">
             {
                 locations.map((location, i) => {
                     return(

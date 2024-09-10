@@ -9,11 +9,11 @@ export default function Navbar(){
 
     const items = [
         {name: "Projets", href: "/projects"},
-        {name: "Contact", href: "/contact"}
+        {name: "Contact", href: "/contact"},
     ];
 
     return(
-        <nav className="flex items-center py-6 px-4 border-b-2 bg-background">
+        <nav className="flex items-center mx-8 py-6 px-4 border-b-2 bg-background">
             <div className="basis-1/3 ">
                 <h1 className="text-3xl font-bold select-none cursor-pointer w-fit" onClick={() => router.push("/")}>valentinrnld™</h1>
             </div>
@@ -26,7 +26,10 @@ export default function Navbar(){
                     })
                 }
             </div>
-            <div className="basis-1/3 flex justify-end"></div>
+            <div className="basis-1/3 flex justify-end">
+                <h1 className="text-3xl font-bold select-none cursor-pointer w-fit"
+                    onClick={() => router.push("/")}>™dlnrnitnelav</h1>
+            </div>
         </nav>
     );
 }

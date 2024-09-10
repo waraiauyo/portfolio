@@ -2,7 +2,7 @@
 
 export default function MainWrapper({children}){
     return(
-        <main className="flex flex-col h-screen px-6 gap-4">
+        <main className="flex flex-col h-screen gap-6">
             {children}
         </main>
     )

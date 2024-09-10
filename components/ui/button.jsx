@@ -39,10 +39,7 @@ const Button = React.forwardRef(({ disabled, loading, className, variant, size, 
     const Comp = asChild ? Slot : "button"
     return (
         (<Comp disabled={loading || disabled} className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} >
-            <>
-                {loading ? <LoaderCircle className={"w-6 h-6 animate-spin mr-2"}/> : null}
-                {children}
-            </>
+            {children}
         </Comp>)
     );
 })
