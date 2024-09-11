@@ -24,6 +24,7 @@
     "react-simple-typewriter": "^5.0.1",
     "react-use": "^17.5.1",
     "react-use-downloader": "^1.2.8",
+    "swr": "^2.2.5",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },
