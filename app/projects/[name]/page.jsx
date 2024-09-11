@@ -1,3 +1,5 @@
+"use client"
+
 import Project from "@/pages/Project";
 
 export default function index({params}){
