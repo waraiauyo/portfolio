@@ -3,6 +3,7 @@
 import SectionWrapper from "@/components/wrappers/section-wrapper";
 import axios from "axios";
 import useSWR from "swr";
+import ProjectTabs from "@/components/sections/project_tabs";
 
 export default function Project({name}){
     const fetcher = (...args) => axios.get(...args)
@@ -12,7 +13,7 @@ export default function Project({name}){
     return (
         <SectionWrapper>
             {
-                data ? JSON.stringify(data)
+                data ? <ProjectTabs project={data}/>
                  : error ? `> erreur: ${error.message}` : `> requête vers api.valentinrnld.fr pour " ${name} " ...`
             }
         </SectionWrapper>

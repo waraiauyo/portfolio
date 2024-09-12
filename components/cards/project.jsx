@@ -23,8 +23,9 @@ export default function Project({project}) {
                 <p>Type: {project.type}</p>
                 <p>Date: {project.date}</p>
             </CardContent>
-            <CardFooter>
-                <p>Projet scolaire</p>
+            <CardFooter className={"flex"}>
+                <p className={"flex basis-1/2"}>{project.is_school ? "Projet scolaire" : "Projet personnel"}</p>
+                <p className={"flex basis-1/2 justify-end"}>{project.size}kb</p>
             </CardFooter>
         </Card>
     );
