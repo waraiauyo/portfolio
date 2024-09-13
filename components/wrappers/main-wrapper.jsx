@@ -4,7 +4,7 @@ export default function MainWrapper({children}){
     return(
         <>
             <main
-                className="md:flex flex-col gap-6 hidden h-full">
+                className="md:flex flex-col gap-6 hidden h-screen">
                 {children}
             </main>
             <div className={"md:hidden flex h-screen justify-center items-center p-8"}>

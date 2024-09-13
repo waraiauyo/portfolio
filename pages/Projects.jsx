@@ -15,9 +15,9 @@ export default function Projects() {
         <MainWrapper>
             <SectionWrapper className={"flex gap-4 flex-wrap transition"}>
                 {
-                    data ? data.map((project) => {
+                    data ? data.map((project, i) => {
                         return(
-                            <Project project={project}/>
+                            <Project key={i} project={project}/>
                         )
                     }) : error ? `> erreur: ${error.message}` : "> requête vers api.valentinrnld.fr ..."
                 }

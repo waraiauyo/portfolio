@@ -1,29 +1,28 @@
 "use client"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Markdown from "react-markdown";
 
 export default function ProjectTabs({project}) {
     const content = JSON.parse(project.content);
 
-    console.log(content.tabs[0]) // FAUT TROUVER LE PREMIER POUR LE DEFUALT ACTIVE KEY
-
     return(
-        <Tabs defaultActiveKey={content.tabs[0]}>
+        <Tabs defaultValue={content.tabs[0].id}>
             <TabsList>
                 {
-                    (content.tabs).map((tab) => {
+                    (content.tabs).map((tab, i) => {
                         return (
-                            <TabsTrigger value={tab}>{tab}</TabsTrigger>
+                            <TabsTrigger key={i} value={tab.id}>{tab.text}</TabsTrigger>
                         );
                     })
                 }
             </TabsList>
             {
-                (content.p).map((content) => {
+                (content.p).map((p, i) => {
                     return (
-                        <TabsContent value={content.tab}>
-                            <h2 className={"font-black text-3xl"}>{content.title}</h2>
-                            <h3>{content.text}</h3>
+                        <TabsContent key={i} value={p.tab}>
+                            <h2 className={"font-black text-3xl"}>{p.title}</h2>
+                            <Markdown>{p.text}</Markdown>
                         </TabsContent>
                     );
                 })

@@ -4,6 +4,7 @@ import MainWrapper from "@/components/wrappers/main-wrapper";
 import Navbar from "@/components/navigation/navbar";
 import ThemeToggle from "@/components/theme/theme-toggle";
 import Breadcrumb from "@/components/navigation/breadcrumb";
+import Disclaimer from "@/components/dialogs/disclaimer";
 
 export const metadata = {
     title: "Portfolio | Valentin Arnould",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }){
                         <Breadcrumb/>
                         {children}
                         <ThemeToggle className={"absolute bottom-4 right-4"}/>
+                        <Disclaimer/>
                     </MainWrapper>
                 </ThemeProvider>
             </body>

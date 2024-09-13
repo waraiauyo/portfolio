@@ -19,9 +19,9 @@ export default function Navbar(){
             </div>
             <div className="basis-1/3 flex gap-4 justify-center border-x-2">
                 {
-                    items.map((item) => {
+                    items.map((item, i) => {
                         return(
-                            <Link key={item.name} href={item.href} className={"px-4 py-2 transition rounded-[1rem] hover:bg-accent " + (pathname === item.href ? "bg-border hover:bg-border text-ice dark:text-background" : null)}>{item.name}</Link>
+                            <Link key={i} href={item.href} className={"px-4 py-2 transition rounded-[1rem] hover:bg-accent " + (pathname === item.href ? "bg-border hover:bg-border text-ice dark:text-background" : null)}>{item.name}</Link>
                         );
                     })
                 }

@@ -12,7 +12,7 @@ export default function Breadcrumb(){
             {
                 locations.map((location, i) => {
                     return(
-                        <Link href={`/${locations.slice(0, i + 1).map((location) => {
+                        <Link key={i} href={`/${locations.slice(0, i + 1).map((location) => {
                             return `${location}/`;
                         }).join("")}`} className="hover:underline">/{location}</Link>
                     );
