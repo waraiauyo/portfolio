@@ -5,6 +5,7 @@ import Navbar from "@/components/navigation/navbar";
 import ThemeToggle from "@/components/theme/theme-toggle";
 import Breadcrumb from "@/components/navigation/breadcrumb";
 import Disclaimer from "@/components/dialogs/disclaimer";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata = {
     title: "Portfolio | Valentin Arnould",
@@ -17,15 +18,16 @@ export default function RootLayout({ children }){
             <body>
                 <ThemeProvider
                 attribute="class"
-                defaultTheme="system"
+                defaultTheme="dark"
                 enableSystem
                 >
                     <MainWrapper>
                         <Navbar/>
                         <Breadcrumb/>
                         {children}
-                        <ThemeToggle className={"absolute bottom-4 right-4"}/>
+                        <ThemeToggle/>
                         <Disclaimer/>
+                        <Toaster/>
                     </MainWrapper>
                 </ThemeProvider>
             </body>
