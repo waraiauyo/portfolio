@@ -12,12 +12,15 @@ import { useForm } from "react-hook-form"
 import SectionWrapper from "@/components/wrappers/section-wrapper";
 import FormData from "form-data";
 import axios from "axios";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { toast } from "sonner";
 
 export default function ContactForm() {
     const [loading, setLoading] = useState(false);
+    const [mount, setMount] = useState(false);
     const {theme} = useTheme();
+
+    useEffect(() => {setMount(true);});
 
     const messages = {
         required: "Ce champ est obligatoire",
@@ -126,7 +129,7 @@ export default function ContactForm() {
                             />
                         </CardContent>
                         <CardFooter className={"flex basis-full justify-end"}>
-                            <Button disabled={loading} type={"submit"} variant={theme.toString() === "light" ? "secondary" : ""}>Envoyer</Button>
+                            <Button disabled={loading} type={"submit"} variant={mount ? theme === "light" ? "secondary" : "" : ""}>Envoyer</Button>
                         </CardFooter>
                     </form>
                 </Form>
