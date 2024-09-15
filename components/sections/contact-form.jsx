@@ -67,7 +67,7 @@ export default function ContactForm() {
 
     return (
         <SectionWrapper className={"pb-8"}>
-            <Card>
+            <Card className={"border-2"}>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(handleSubmit)}>
                         <CardHeader>

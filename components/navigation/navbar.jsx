@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import {Button} from "@/components/ui/button";
 
 export default function Navbar(){
     const router = useRouter();
@@ -13,22 +14,20 @@ export default function Navbar(){
     ];
 
     return(
-        <nav className="flex items-center mx-8 py-6 px-4 border-b-2 bg-background">
-            <div className="basis-1/3 ">
+        <nav className="flex items-center mx-8 py-6 px-4 border-b-2 bg-background sticky top-0">
+            <div className="basis-1/2">
                 <h1 className="text-3xl font-bold select-none cursor-pointer w-fit" onClick={() => router.push("/")}>valentinrnld™</h1>
             </div>
-            <div className="basis-1/3 flex gap-4 justify-center border-x-2">
+            <div className="basis-1/2 flex justify-end gap-4 border-l-2">
                 {
                     items.map((item, i) => {
                         return(
-                            <Link key={i} href={item.href} className={"px-4 py-2 transition rounded-[1rem] hover:bg-accent " + (pathname === item.href ? "bg-border hover:bg-border text-ice dark:text-background" : null)}>{item.name}</Link>
+                            <Button key={i} variant={"ghost"} asChild className={pathname === item.href ? "bg-border hover:bg-border hover:text-ice text-ice dark:text-background" : null}>
+                                <Link href={item.href} >{item.name}</Link>
+                            </Button>
                         );
                     })
                 }
-            </div>
-            <div className="basis-1/3 flex justify-end">
-                <h1 className="text-3xl font-bold select-none cursor-pointer w-fit"
-                    onClick={() => router.push("/")}>™dlnrnitnelav</h1>
             </div>
         </nav>
     );
