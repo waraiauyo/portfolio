@@ -66,7 +66,7 @@ export default function ContactForm() {
     }
 
     return (
-        <SectionWrapper className={"pb-4"}>
+        <SectionWrapper className={"pb-8"}>
             <Card>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(handleSubmit)}>
@@ -82,7 +82,7 @@ export default function ContactForm() {
                                     <FormItem>
                                         <FormLabel>Votre nom et prénom</FormLabel>
                                         <FormControl>
-                                            <Input placeholder={"Berners-Lee Tim"} {...field} />
+                                            <Input placeholder={"Berners-Lee Tim"} className={"font-monocal font-black"} {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -95,7 +95,7 @@ export default function ContactForm() {
                                     <FormItem>
                                         <FormLabel>Votre e-mail</FormLabel>
                                         <FormControl>
-                                            <Input placeholder={"bernerslee.tim@cern.com"} {...field} />
+                                            <Input placeholder={"bernerslee.tim@cern.com"} className={"font-monocal font-black"} {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -108,7 +108,7 @@ export default function ContactForm() {
                                     <FormItem>
                                         <FormLabel>Sujet</FormLabel>
                                         <FormControl>
-                                            <Input placeholder={"Recrutement stage..."} {...field} />
+                                            <Input placeholder={"Recrutement stage..."} className={"font-monocal font-black"} {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -121,7 +121,7 @@ export default function ContactForm() {
                                     <FormItem>
                                         <FormLabel>Votre message</FormLabel>
                                         <FormControl>
-                                            <Textarea placeholder={"Le contenu de votre message"} rows={10} {...field} />
+                                            <Textarea placeholder={"Le contenu de votre message"} className={"font-monocal font-black"} rows={10} {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>

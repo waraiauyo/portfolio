@@ -10,6 +10,7 @@ module.exports = {
   	extend: {
 		fontFamily: {
 			sans: "proto",
+			monocal: "monocal"
 		},
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

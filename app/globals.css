@@ -7,6 +7,11 @@
   src: url(./fonts/Proto-Mono-Regular.otf);
 }
 
+@font-face {
+  font-family: "monocal";
+  src: url(./fonts/Monocal-Regular.otf);
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
