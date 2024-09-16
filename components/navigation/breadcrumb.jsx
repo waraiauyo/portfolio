@@ -11,6 +11,7 @@ export default function Breadcrumb(){
         <div className="mx-8 flex">
             {
                 locations.map((location, i) => {
+                    location = decodeURI(location);
                     return(
                         <Link key={i} href={`/${locations.slice(0, i + 1).map((location) => {
                             return `${location}/`;
