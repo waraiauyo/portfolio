@@ -16,7 +16,7 @@ export default function Project({key, project}) {
     return(
         <Card key={key} onClick={() => router.push(`/projects/${(project.name).toLowerCase()}`)} className={"w-96 h-fit border-2 group cursor-pointer select-none hover:bg-accent transition"}>
             <CardHeader>
-                <CardTitle className={"flex gap-4"}><p className={"group-hover:translate-x-2 group-active:translate-x-2.5 transition"}>→</p>{project.name}</CardTitle>
+                <CardTitle className={"flex gap-4"}><p className={"group-hover:translate-x-2 group-active:translate-x-2.5 transition"}>→</p>{project.display_name}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent>

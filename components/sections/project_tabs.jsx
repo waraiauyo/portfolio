@@ -23,6 +23,11 @@ export default function ProjectTabs({project}) {
                         <TabsContent key={i} value={p.tab}>
                             <h2 className={"font-black text-3xl"}>{p.title}</h2>
                             <Markdown>{p.text}</Markdown>
+                            {p.techs ? (p.techs).map((tech, i) => {
+                                return(
+                                    <Markdown key={i}>{"\\- " + tech}</Markdown>
+                                );
+                            }): null}
                         </TabsContent>
                     );
                 })
