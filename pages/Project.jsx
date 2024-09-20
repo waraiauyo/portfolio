@@ -5,12 +5,10 @@ import axios from "axios";
 import useSWR from "swr";
 import ProjectTabs from "@/components/sections/project_tabs";
 
-export default function Project({name, setTitleProjectName}){
+export default function Project({name}){
     const fetcher = (...args) => axios.get(...args)
         .then((response) => response.data);
     const { data, error } = useSWR(`https://api.valentinrnld.fr/get/project/${name}`, fetcher);
-
-    setTitleProjectName(data ? data.display_name : name);
 
     return (
         <SectionWrapper>

@@ -6,10 +6,9 @@ import {useState} from "react";
 
 export default function index({params}){
     const name = decodeURI(params.name);
-    const [titleProjectName, setTitleProjectName] = useState(name);
 
-    useTitle(`Portfolio - Valentin A. | ${titleProjectName}`)
+    useTitle(`Portfolio - Valentin A. | Projet`)
     useFavicon("https://api.valentinrnld.fr/file/favicon/");
 
-    return <Project name={name} setTitleProjectName={setTitleProjectName}/>;
+    return <Project name={name}/>;
 }
