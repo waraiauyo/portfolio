@@ -11,6 +11,8 @@ export default function Projects() {
         .then((response) => response.data);
     const { data, error } = useSWR("https://api.valentinrnld.fr/get/projects", fetcher);
 
+    //OPTIMISER CETTE PAGE EN FAISANT UN COMPOSANT DANS ./section/...
+
     return(
         <MainWrapper>
             <SectionWrapper className={"flex gap-4 flex-wrap transition"}>

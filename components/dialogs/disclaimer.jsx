@@ -13,9 +13,8 @@ import {
 import {useEffect, useState} from "react";
 import {Button} from "@/components/ui/button";
 
-
 export default function Disclaimer() {
-    const [value, setValue, remove] = useLocalStorage("firstjoin");
+    const [value, setValue] = useLocalStorage("firstjoin");
     const [open, setOpen] = useState(false);
 
     useEffect(() => {
@@ -24,7 +23,7 @@ export default function Disclaimer() {
 
     return(
         <Dialog open={open} onClose={() => setOpen(false)}>
-            <DialogContent>
+            <DialogContent className={"border-2"}>
                 <DialogHeader>
                     <DialogTitle>Bienvenue ! Mais petit disclaimer</DialogTitle>
                     <DialogDescription>

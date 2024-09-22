@@ -27,7 +27,7 @@ export default function Navbar(){
     ];
 
     return(
-        <nav className="flex items-center mx-8 py-6 px-4 border-b-2 bg-background sticky top-0">
+        <nav className="flex items-center mx-8 py-6 px-4 border-b-2 bg-background sticky top-0 z-10">
             <div className="basis-1/2">
                 <h1 className="text-3xl font-bold select-none cursor-pointer w-fit" onClick={() => router.push("/")}>valentinrnld™</h1>
             </div>

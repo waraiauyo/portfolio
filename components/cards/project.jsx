@@ -13,6 +13,8 @@ import {useRouter} from "next/navigation";
 export default function Project({key, project}) {
     const router = useRouter();
 
+    //OPTI : BUTTON ASCHILD LINK AU LIEU DE ROUTER.PUSH
+
     return(
         <Card key={key} onClick={() => router.push(`/projects/${(project.name).toLowerCase()}`)} className={"w-96 h-fit border-2 group cursor-pointer select-none hover:bg-accent transition"}>
             <CardHeader>

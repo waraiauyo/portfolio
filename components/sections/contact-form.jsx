@@ -4,7 +4,6 @@ import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input";
-import { useTheme } from "next-themes"
 import {Button} from "@/components/ui/button";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -12,15 +11,11 @@ import { useForm } from "react-hook-form"
 import SectionWrapper from "@/components/wrappers/section-wrapper";
 import FormData from "form-data";
 import axios from "axios";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import { toast } from "sonner";
 
 export default function ContactForm() {
     const [loading, setLoading] = useState(false);
-    const [mount, setMount] = useState(false);
-    const {theme} = useTheme();
-
-    useEffect(() => {setMount(true);});
 
     const messages = {
         required: "Ce champ est obligatoire",
@@ -67,7 +62,7 @@ export default function ContactForm() {
 
     return (
         <SectionWrapper className={"pb-8"}>
-            <Card className={"border-2"}>
+            <Card>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(handleSubmit)}>
                         <CardHeader>
@@ -129,7 +124,7 @@ export default function ContactForm() {
                             />
                         </CardContent>
                         <CardFooter className={"flex basis-full justify-end"}>
-                            <Button disabled={loading} type={"submit"} variant={mount ? theme === "light" ? "secondary" : "" : ""}>Envoyer</Button>
+                            <Button disabled={loading} className={"bg-black dark:bg-ice text-background dark:text-background hover:bg-black"}>Envoyer</Button>
                         </CardFooter>
                     </form>
                 </Form>
