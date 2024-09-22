@@ -17,14 +17,17 @@ export default function Navbar(){
     const router = useRouter();
     const pathname = usePathname();
 
-    const fetcher = (...args) => axios.get(...args, {headers: `Authorization: Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`})
-        .then((response) => response.data);
+    const fetcher = (url) => axios.get(url, {headers: `Authorization: Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`})
+        .then((responseRepo) => axios.get((responseRepo.data.commits_url).slice(0, -6)).then((responseCommit) => ({repo: responseRepo.data, commits: responseCommit.data})));
+
     const { data, error } = useSWR("https://api.github.com/repos/LixagDev/portfolio", fetcher);
 
     const items = [
         {name: "Projets", href: "/projects"},
         {name: "Contact", href: "/contact"},
     ];
+
+    console.log(data ? data : "non")
 
     return(
         <nav className="flex items-center mx-8 py-6 px-4 border-b-2 bg-background sticky top-0 z-10">
@@ -35,10 +38,10 @@ export default function Navbar(){
                 <TooltipProvider>
                     <Tooltip delayDuration={0}>
                         <TooltipTrigger asChild>
-                            <p className={"mr-auto select-none cursor-pointer"}>Dernière MAJ : {data ? new Date(data.pushed_at).toLocaleDateString() : "..."}</p>
+                            <p className={"mr-auto select-none cursor-pointer"}>Dernière MAJ : {data ? new Date(data.repo.pushed_at).toLocaleDateString() : "..."}</p>
                         </TooltipTrigger>
                         <TooltipContent side={"bottom"}>
-                            <p>à {data ? new Date(data.pushed_at).toLocaleTimeString() : "..."}</p>
+                            <p>à {data ? new Date(data.repo.pushed_at).toLocaleTimeString() : "..."}</p>
                         </TooltipContent>
                     </Tooltip>
                 </TooltipProvider>
