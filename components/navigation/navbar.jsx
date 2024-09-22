@@ -27,8 +27,6 @@ export default function Navbar(){
         {name: "Contact", href: "/contact"},
     ];
 
-    console.log(data ? data : "non")
-
     return(
         <nav className="flex items-center mx-8 py-6 px-4 border-b-2 bg-background sticky top-0 z-10">
             <div className="basis-1/2">
@@ -41,7 +39,7 @@ export default function Navbar(){
                             <p className={"mr-auto select-none cursor-pointer"}>Dernière MAJ : {data ? new Date(data.repo.pushed_at).toLocaleDateString() : "..."}</p>
                         </TooltipTrigger>
                         <TooltipContent side={"bottom"}>
-                            <p>à {data ? new Date(data.repo.pushed_at).toLocaleTimeString() : "..."}</p>
+                            <p>à {data ? new Date(data.repo.pushed_at).toLocaleTimeString() : "..."} - <Link className={"underline"} href={data ? data.commits[0].html_url : null}>{data ? data.commits[0].commit.message : ""}</Link></p>
                         </TooltipContent>
                     </Tooltip>
                 </TooltipProvider>
