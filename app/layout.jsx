@@ -8,6 +8,7 @@ import Disclaimer from "@/components/dialogs/disclaimer";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata = {
+    title: "Portfolio - Valentin Arnould",
     description: "Portfolio de Valentin ARNOULD, étudiant en 2ème de BUT MMI.",
 };
 

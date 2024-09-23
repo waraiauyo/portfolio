@@ -1,0 +1,4 @@
+const fetcher = (url) => axios.get(url, {headers: `Authorization: Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`})
+        .then((responseRepo) => axios.get((responseRepo.data.commits_url).slice(0, -6)).then((responseCommit) => ({repo: responseRepo.data, commits: responseCommit.data})));
+
+    const { data, error } = useSWR("https://api.github.com/repos/LixagDev/portfolio", fetcher);

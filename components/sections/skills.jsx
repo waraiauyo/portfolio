@@ -17,6 +17,7 @@ export default function Skills() {
         {name: "CSS", description: "Langage de feuille de style utilisé pour l'HTML.", src: "https://imgdb.net/storage/uploads/685ba0b3fd40f16ae7203354f45b1f6a4a208fc46d72751374b6d933b1134b18.png", link: "https://developer.mozilla.org/fr/docs/Web/CSS"},
         {name: "Socket.IO", description: "Bibliothèque de communication à faible latence entre un client et un serveur.", src: "https://imgdb.net/storage/uploads/b3e5135b7918efc6e1e430c5632dc2d8f85630fbee52da191c6d4eb79047ec41.png", link: "https://www.prisma.io/"},
         {name: "PHP", description: "Language de programmation pour produire des pages Web dynamiques via un serveur web.", src: "https://imgdb.net/storage/uploads/a1682b792d52f9fc311933e0a0310d23537db3bd566857315a9f8a63755d2017.png", link: "https://www.php.net/"},
+        {name: "Electron.js", description: "Créateur d'application de bureau multiplateformes avec JavaScript, HTML et CSS.", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/1200px-Electron_Software_Framework_Logo.svg.png", link: "https://www.electronjs.org/fr/"},
     ];
 
     return (
