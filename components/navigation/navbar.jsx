@@ -9,10 +9,8 @@ export default function Navbar(){
     const pathname = usePathname();
 
     const items = [
-        {name: "Projets", href: "/projects", disabled: false},
-        {name: "Contact", href: "/contact", disabled: false},
-        {name: "À propos", href: "/about", disabled: true},
-        {name: "Ce portfolio", href: "/portfolio", disabled: true},
+        {name: "Projets", href: "/projects"},
+        {name: "Contact", href: "/contact"},
     ];
 
     return(
@@ -24,7 +22,7 @@ export default function Navbar(){
                 {
                     items.map((item, i) => {
                         return(
-                            <Button disabled={item.disabled} key={i} variant={"ghost"} className={pathname === item.href ? "bg-border hover:bg-border hover:text-ice text-ice dark:text-background" : null}>
+                            <Button asChild key={i} variant={"ghost"} className={pathname === item.href ? "bg-border hover:bg-border hover:text-ice text-ice dark:text-background" : null}>
                                 <Link href={item.href}>{item.name}</Link>
                             </Button>
                         );

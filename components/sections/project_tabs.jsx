@@ -2,6 +2,8 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Markdown from "react-markdown";
+import Link from "next/link";
+import Video from 'next-video';
 
 export default function ProjectTabs({project}) {
     const content = JSON.parse(project.content);
@@ -25,7 +27,15 @@ export default function ProjectTabs({project}) {
                             <Markdown>{p.text}</Markdown>
                             {p.techs ? (p.techs).map((tech, i) => {
                                 return(
-                                    <Markdown key={i}>{"\\- " + tech}</Markdown>
+                                    <Link key={i} href={tech.href} className={"hover:underline"}>{"\- " + tech.name}</Link>
+                                );
+                            }): null}
+                            {p.videos ? (p.videos).map((video, i) => {
+                                return(
+                                    <div className={"w-2/3"}>
+                                        <Video src={video.src} />
+                                        <p>{video.description}</p>
+                                    </div>
                                 );
                             }): null}
                         </TabsContent>
