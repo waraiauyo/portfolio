@@ -27,7 +27,9 @@ export default function ProjectTabs({project}) {
                             <Markdown>{p.text}</Markdown>
                             {p.techs ? (p.techs).map((tech, i) => {
                                 return(
-                                    <Link key={i} href={tech.href} className={"hover:underline"}>{"\- " + tech.name}</Link>
+                                    <div className={" lex flex-col"}>
+                                        <Link key={i} href={tech.href} className={"hover:underline"}>{"\- " + tech.name}</Link>
+                                    </div>
                                 );
                             }): null}
                             {p.videos ? (p.videos).map((video, i) => {
