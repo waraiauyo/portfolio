@@ -39,7 +39,7 @@ export default function Introducing(){
             </div>
             <div className={"flex gap-4"}>
                 <Button asChild size={"icon"} variant={"outline"} className={"border-2"}><Link
-                    href={"https://github.com/LixagDev"}><Github size={18}/></Link></Button>
+                    href={"https://github.com/waraiauyo"}><Github size={18}/></Link></Button>
                 <Button asChild size={"icon"} variant={"outline"} className={"border-2"}><Link
                     href={"https://www.linkedin.com/in/valentin-arnould-615a96272/"}><Linkedin
                     size={18}/></Link></Button>
