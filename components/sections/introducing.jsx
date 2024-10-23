@@ -31,7 +31,7 @@ export default function Introducing(){
                     <Link href="/contact">Me contacter</Link>
                 </Button>
                 <Button className={"relative overflow-hidden"} disabled={isInProgress}
-                        onClick={() => download("https://api.valentinrnld.fr/file/cv", "CV ARNOULD Valentin.pdf")} variant="secondary">
+                        onClick={() => download("https://api.valentinrnld.fr/storage/portfolio/cv.pdf", "CV ARNOULD Valentin.pdf")} variant="secondary">
                     <Progress var className={"absolute top-0 left-0 h-full rounded-none"} max={100} value={percentage}/>
                     <span className={"relative dark:mix-blend-difference"}>Mon CV</span>
                     <Download size={18} className="ml-2 relative dark:mix-blend-difference"/>
