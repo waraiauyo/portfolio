@@ -8,13 +8,13 @@ import ProjectTabs from "@/components/sections/project_tabs";
 export default function Project({name}){
     const fetcher = (...args) => axios.get(...args)
         .then((response) => response.data);
-    const { data, error } = useSWR(`https://api.valentinrnld.fr/get/project/${name}`, fetcher);
+    const { data, error } = useSWR(`https://api.mmi.tools/get/project/${name}`, fetcher);
 
     return (
         <SectionWrapper>
             {
                 data ? <ProjectTabs project={data}/>
-                 : error ? `> erreur: ${error.message}` : `> requête vers api.valentinrnld.fr pour " ${name} " ...`
+                 : error ? `> erreur: ${error.message}` : `> requête vers l'api pour " ${name} " ...`
             }
         </SectionWrapper>
     );

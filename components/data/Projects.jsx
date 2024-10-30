@@ -10,5 +10,5 @@ export default function Projects({data, error}){
             })
         );
     } else if (error) return `> erreur: ${error.message}`;
-    else return "> requête vers api.valentinrnld.fr ...";
+    else return "> requête vers l'api ...";
 }

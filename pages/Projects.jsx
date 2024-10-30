@@ -9,7 +9,7 @@ import ProjectsData from "@/components/data/Projects";
 export default function Projects() {
     const fetcher = (...args) => axios.get(...args)
         .then((response) => response.data);
-    const { data, error } = useSWR("https://api.valentinrnld.fr/get/projects", fetcher);
+    const { data, error } = useSWR("https://api.mmi.tools/get/projects", fetcher);
 
     return(
         <MainWrapper>
