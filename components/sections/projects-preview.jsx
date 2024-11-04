@@ -10,7 +10,7 @@ import Projects from "@/components/data/Projects";
 export default function ProjectsPreview() {
     const fetcher = (...args) => axios.get(...args)
         .then((response) => response.data);
-    let { data, error } = useSWR("https://api.valentinrnld.fr/get/projects", fetcher);
+    let { data, error } = useSWR("https://api.mmi.tools/get/projects", fetcher);
 
     return (
         <SectionWrapper>
